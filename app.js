@@ -39,12 +39,12 @@ app.get('/partials/:name', routes.partials);
 
 // JSON API
 
-app.get('/api/posts', api.posts);
+app.get('/api/events', api.events);
 
-app.get('/api/post/:id', api.post);
-app.post('/api/post', api.addPost);
-app.put('/api/post/:id', api.editPost);
-app.delete('/api/post/:id', api.deletePost);
+app.get('/api/event/:id', api.event);
+app.post('/api/event', api.addEvent);
+app.put('/api/event/:id', api.editEvent);
+app.delete('/api/event/:id', api.deleteEvent);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

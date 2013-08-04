@@ -5,13 +5,13 @@
 // For a real app, you'd make database requests here.
 // For this example, "data" acts like an in-memory "database"
 var data = {
-  "posts": [
+  "events": [
     {
-      "title": "Lorem ipsum",
+      "title": "Hospoda",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      "title": "Sed egestas",
+      "title": "Divadlo",
       "text": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus."
     }
   ]
@@ -19,25 +19,25 @@ var data = {
 
 // GET
 
-exports.posts = function (req, res) {
-  var posts = [];
-  data.posts.forEach(function (post, i) {
-    posts.push({
+exports.events = function (req, res) {
+  var events = [];
+  data.events.forEach(function (event, i) {
+    events.push({
       id: i,
-      title: post.title,
-      text: post.text.substr(0, 50) + '...'
+      title: event.title,
+      text: event.text.substr(0, 50) + '...'
     });
   });
   res.json({
-    posts: posts
+    events: events
   });
 };
 
-exports.post = function (req, res) {
+exports.event = function (req, res) {
   var id = req.params.id;
-  if (id >= 0 && id < data.posts.length) {
+  if (id >= 0 && id < data.events.length) {
     res.json({
-      post: data.posts[id]
+      event: data.events[id]
     });
   } else {
     res.json(false);
@@ -46,18 +46,18 @@ exports.post = function (req, res) {
 
 // POST
 
-exports.addPost = function (req, res) {
-  data.posts.push(req.body);
+exports.addEvent = function (req, res) {
+  data.events.push(req.body);
   res.json(req.body);
 };
 
 // PUT
 
-exports.editPost = function (req, res) {
+exports.editEvent = function (req, res) {
   var id = req.params.id;
 
-  if (id >= 0 && id < data.posts.length) {
-    data.posts[id] = req.body;
+  if (id >= 0 && id < data.events.length) {
+    data.events[id] = req.body;
     res.json(true);
   } else {
     res.json(false);
@@ -66,11 +66,11 @@ exports.editPost = function (req, res) {
 
 // DELETE
 
-exports.deletePost = function (req, res) {
+exports.deleteEvent = function (req, res) {
   var id = req.params.id;
 
-  if (id >= 0 && id < data.posts.length) {
-    data.posts.splice(id, 1);
+  if (id >= 0 && id < data.events.length) {
+    data.events.splice(id, 1);
     res.json(true);
   } else {
     res.json(false);

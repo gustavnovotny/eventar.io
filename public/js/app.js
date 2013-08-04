@@ -8,21 +8,21 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
         templateUrl: 'partials/index',
         controller: IndexCtrl
       }).
-      when('/addPost', {
-        templateUrl: 'partials/addPost',
-        controller: AddPostCtrl
+      when('/addEvent', {
+        templateUrl: 'partials/addEvent',
+        controller: AddEventCtrl
       }).
-      when('/readPost/:id', {
-        templateUrl: 'partials/readPost',
-        controller: ReadPostCtrl
+      when('/readEvent/:id', {
+        templateUrl: 'partials/readEvent',
+        controller: ReadEventCtrl
       }).
-      when('/editPost/:id', {
-        templateUrl: 'partials/editPost',
-        controller: EditPostCtrl
+      when('/editEvent/:id', {
+        templateUrl: 'partials/editEvent',
+        controller: EditEventCtrl
       }).
-      when('/deletePost/:id', {
-        templateUrl: 'partials/deletePost',
-        controller: DeletePostCtrl
+      when('/deleteEvent/:id', {
+        templateUrl: 'partials/deleteEvent',
+        controller: DeleteEventCtrl
       }).
       otherwise({
         redirectTo: '/'

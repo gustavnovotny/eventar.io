@@ -3,52 +3,52 @@
 /* Controllers */
 
 function IndexCtrl($scope, $http) {
-  $http.get('/api/posts').
+  $http.get('/api/events').
     success(function(data, status, headers, config) {
-      $scope.posts = data.posts;
+      $scope.events = data.events;
     });
 }
 
-function AddPostCtrl($scope, $http, $location) {
+function AddEventCtrl($scope, $http, $location) {
   $scope.form = {};
-  $scope.submitPost = function () {
-    $http.post('/api/post', $scope.form).
+  $scope.submitEvent = function () {
+    $http.post('/api/event', $scope.form).
       success(function(data) {
         $location.path('/');
       });
   };
 }
 
-function ReadPostCtrl($scope, $http, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
+function ReadEventCtrl($scope, $http, $routeParams) {
+  $http.get('/api/event/' + $routeParams.id).
     success(function(data) {
-      $scope.post = data.post;
+      $scope.event = data.event;
     });
 }
 
-function EditPostCtrl($scope, $http, $location, $routeParams) {
+function EditEventCtrl($scope, $http, $location, $routeParams) {
   $scope.form = {};
-  $http.get('/api/post/' + $routeParams.id).
+  $http.get('/api/event/' + $routeParams.id).
     success(function(data) {
-      $scope.form = data.post;
+      $scope.form = data.event;
     });
 
-  $scope.editPost = function () {
-    $http.put('/api/post/' + $routeParams.id, $scope.form).
+  $scope.editEvent = function () {
+    $http.put('/api/event/' + $routeParams.id, $scope.form).
       success(function(data) {
-        $location.url('/readPost/' + $routeParams.id);
+        $location.url('/readEvent/' + $routeParams.id);
       });
   };
 }
 
-function DeletePostCtrl($scope, $http, $location, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
+function DeleteEventCtrl($scope, $http, $location, $routeParams) {
+  $http.get('/api/event/' + $routeParams.id).
     success(function(data) {
-      $scope.post = data.post;
+      $scope.event = data.event;
     });
 
-  $scope.deletePost = function () {
-    $http.delete('/api/post/' + $routeParams.id).
+  $scope.deleteEvent = function () {
+    $http.delete('/api/event/' + $routeParams.id).
       success(function(data) {
         $location.url('/');
       });
