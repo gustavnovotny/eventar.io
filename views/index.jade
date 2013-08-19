@@ -1,24 +1,29 @@
 extends layout
 
 block body
-  .navbar
+  .navbar(bs-navbar)
     .container
         .navbar-inner
             a.brand(href='#') EVENTAR.IO
             ul.nav
                 li(data-match-route='/')
                     a(href='/') Event list
-                li(data-match-route='addEvent')
+                li(data-match-route='/addEvent')
                     a(href='/addEvent') Add event
 
 
   .container
     div(ng-view)
 
-  script(src='js/lib/angular/angular.js')
+
+  script(src="js/lib/angular/angular.js")
+  script(src="//cdn.firebase.com/v0/firebase.js")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js")
+
   script(src='js/lib/angular-strap/angular-strap.js')
   script(src='js/app.js')
   script(src='js/services.js')
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+
