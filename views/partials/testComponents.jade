@@ -1,3 +1,4 @@
 .container
-	p ahojdsdf
-	button.btn(bs-button,type='button', ng-model='button.active') ahoj dsddsdaa
+    p ahojdsdf
+    #alert(ng-repeat="alert in alerts",type="alert.type",close="closeAlert($index)") {{alert.msg}}
+    #button.btn(ng-click='addAlert()') Add Alert
