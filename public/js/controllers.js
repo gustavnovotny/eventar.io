@@ -12,6 +12,10 @@ function IndexCtrl($scope, angularFire) {
 
 }
 
+function TestComponentsCtrl($scope) {
+  $scope.button = {"active": false};
+}
+
 function AddEventCtrl($scope, $location, angularFire) {
     var promise = angularFire("https://eventario.firebaseio.com/events", $scope, "events");
     promise.then(function(){
@@ -64,4 +68,5 @@ function DeleteEventCtrl($scope, $http, $location, $routeParams) {
   $scope.home = function () {
     $location.url('/');
   };
+
 }

@@ -1,8 +1,8 @@
 extends layout
 
 block body
-  .navbar(bs-navbar)
-    .container
+  .container
+    .navbar(bs-navbar)
         .navbar-inner
             a.brand(href='#') EVENTAR.IO
             ul.nav
@@ -10,7 +10,8 @@ block body
                     a(href='/') Event list
                 li(data-match-route='/addEvent')
                     a(href='/addEvent') Add event
-
+                li(data-match-route='/testComponents')
+                    a(href='/testComponents') Test Components
 
   .container
     div(ng-view)
