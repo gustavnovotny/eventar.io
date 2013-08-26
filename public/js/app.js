@@ -1,16 +1,12 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'firebase', 'ui.bootstrap']).
+angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'ui.bootstrap']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {
         templateUrl: 'partials/index',
         controller: IndexCtrl
-      }).
-      when('/testComponents', {
-        templateUrl: 'partials/testComponents',
-        controller: TestComponentsCtrl
       }).
       when('/addEvent', {
         templateUrl: 'partials/addEvent',

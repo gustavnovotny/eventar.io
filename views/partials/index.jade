@@ -1,9 +1,15 @@
 p There are {{events.length}} events
-div(ng-repeat='event in events')
-  h3 {{event.title}}
-  div {{event.text}}
-  a(href='/readEvent/{{event.id}}') More
-  |  - 
-  a(href='/editEvent/{{event.id}}') Edit
-  |  - 
-  a(href='/deleteEvent/{{event.id}}') Delete
+.results-container
+    ul.event-list
+        li(ng-repeat='event in events')
+            .row-fluid
+                .span3
+                    h3 {{event.title}}
+                .span6
+                    div {{event.text}}
+                .span3
+                    a(href='/readEvent/{{event.id}}') More
+                    |  -
+                    a(href='/editEvent/{{event.id}}') Edit
+                    |  -
+                    a(href='/deleteEvent/{{event.id}}') Delete

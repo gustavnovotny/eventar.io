@@ -1,4 +1,9 @@
 .container
-    p ahojdsdf
-    #alert(ng-repeat="alert in alerts",type="alert.type",close="closeAlert($index)") {{alert.msg}}
-    #button.btn(ng-click='addAlert()') Add Alert
+    .well
+        #alert(ng-repeat="alert in alerts",type="alert.type",close="closeAlert($index)") {{alert.msg}}
+        #button.btn(ng-click='addAlert()') Add Alert
+
+        tabset
+            tab(heading="Static title") Static content
+            tab(heading="Static title2") Static content
+

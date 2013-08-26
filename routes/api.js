@@ -7,8 +7,15 @@
 var data = {
   "events": [
     {
-      "title": "Hospoda",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "Hospoda",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "type": "pub",
+        "place": "U Holubů",
+        "dateFrom": Date.now(),
+        "dateTo": null,
+        "participantsLimit": 15,
+        "participants": [ {"name":"Karel", "surname": "Novák", "email": "karelnovak@gmail.com"}]
+
     },
     {
       "title": "Divadlo",
